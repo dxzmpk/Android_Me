@@ -16,27 +16,35 @@
 
 package com.example.android.android_me.ui;
 
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import android.os.Bundle;
-
 import com.example.android.android_me.R;
 
 // This activity will display a custom Android image composed of three body parts: head, body, and legs
 public class AndroidMeActivity extends AppCompatActivity {
 
+    // COMPLETED (1) Create a layout file that displays one body part image named fragment_body_part.xml
+        // This layout should contain a single ImageView
+
+    // COMPLETED (2) Create a new class called BodyPartFragment to display an image of an Android-Me body part
+        // In this class, you'll need to implement an empty constructor and the onCreateView method
+        // COMPLETED (3) Show the first image in the list of head images
+            // Soon, you'll update this image display code to show any image you want
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_android_me);
 
-        // Create a new head BodyPartFragment
+
+        // COMPLETED (5) Create a new BodyPartFragment instance and display it using the FragmentManager
         BodyPartFragment headFragment = new BodyPartFragment();
 
-        // Add the fragment to its container using a FragmentManager and a Transaction
+        // Use a FragmentManager and transacton to add the fragment to the screen
         FragmentManager fragmentManager = getSupportFragmentManager();
 
+        // Fragment transaction
         fragmentManager.beginTransaction()
                 .add(R.id.head_container, headFragment)
                 .commit();
