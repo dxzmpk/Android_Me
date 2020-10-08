@@ -33,6 +33,7 @@ import androidx.fragment.app.Fragment;
 public class BodyPartFragment extends Fragment {
 
     // COMPLETED (3) Create final Strings to store state information about the list of images and list index
+
     // Final Strings to store state information about the list of images and list index
     public static final String IMAGE_ID_LIST = "image_ids";
     public static final String LIST_INDEX = "list_index";
@@ -58,6 +59,7 @@ public class BodyPartFragment extends Fragment {
 
         // Load the saved state (the list of images and list index) if there is one
         if(savedInstanceState !=null) {
+
             mImageIds = savedInstanceState.getIntegerArrayList(IMAGE_ID_LIST);
             mListIndex = savedInstanceState.getInt(LIST_INDEX);
         }
@@ -82,6 +84,7 @@ public class BodyPartFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     //Increment position as long as the index remains <= the size of the image ids list
+
                     if(mListIndex < mImageIds.size()-1) {
                         mListIndex++;
                     } else {
@@ -115,6 +118,7 @@ public class BodyPartFragment extends Fragment {
     }
 
     // COMPLETED (4) Override onSaveInstanceState and save the current state of this fragment
+
     /**
      * Save the current state of this fragment
      */
