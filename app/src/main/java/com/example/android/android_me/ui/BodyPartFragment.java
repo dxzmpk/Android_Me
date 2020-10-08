@@ -17,19 +17,22 @@
 package com.example.android.android_me.ui;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
 import com.example.android.android_me.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+
 public class BodyPartFragment extends Fragment {
+
+    // COMPLETED (3) Create final Strings to store state information about the list of images and list index
 
     // Final Strings to store state information about the list of images and list index
     public static final String IMAGE_ID_LIST = "image_ids";
@@ -55,7 +58,8 @@ public class BodyPartFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         // Load the saved state (the list of images and list index) if there is one
-        if(savedInstanceState != null) {
+        if(savedInstanceState !=null) {
+
             mImageIds = savedInstanceState.getIntegerArrayList(IMAGE_ID_LIST);
             mListIndex = savedInstanceState.getInt(LIST_INDEX);
         }
@@ -72,11 +76,15 @@ public class BodyPartFragment extends Fragment {
             // Set the image resource to the list item at the stored index
             imageView.setImageResource(mImageIds.get(mListIndex));
 
+            // COMPLETED (1) Set a click listener on the image view and on a click increment the list index and set the image resource
+            // COMPLETED (2) If you reach the end of a list of images, set the list index back to 0 (the first item in the list)
+
             // Set a click listener on the image view
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view) {
-                    // Increment position as long as the index remains <= the size of the image ids list
+                public void onClick(View v) {
+                    //Increment position as long as the index remains <= the size of the image ids list
+
                     if(mListIndex < mImageIds.size()-1) {
                         mListIndex++;
                     } else {
@@ -86,7 +94,9 @@ public class BodyPartFragment extends Fragment {
                     // Set the image resource to the new list item
                     imageView.setImageResource(mImageIds.get(mListIndex));
                 }
-            });
+            }
+
+            );
 
         } else {
             Log.v(TAG, "This fragment has a null list of image id's");
@@ -107,14 +117,14 @@ public class BodyPartFragment extends Fragment {
         mListIndex = index;
     }
 
+    // COMPLETED (4) Override onSaveInstanceState and save the current state of this fragment
+
     /**
      * Save the current state of this fragment
      */
     @Override
-    public void onSaveInstanceState(Bundle currentState) {
+    public void onSaveInstanceState(@NonNull Bundle currentState) {
         currentState.putIntegerArrayList(IMAGE_ID_LIST, (ArrayList<Integer>) mImageIds);
         currentState.putInt(LIST_INDEX, mListIndex);
     }
-
-
 }
