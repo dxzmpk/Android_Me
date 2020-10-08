@@ -24,14 +24,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.android.android_me.R;
-import com.example.android.android_me.data.AndroidImageAssets;
 
 import java.util.List;
-
+import java.util.List;
 import androidx.fragment.app.Fragment;
 
 public class BodyPartFragment extends Fragment {
-
 
     // Tag for logging
     private static final String TAG = "BodyPartFragment";
@@ -70,7 +68,6 @@ public class BodyPartFragment extends Fragment {
             Log.v(TAG, "This fragment has a null list of image id's");
         }
 
-
         // Return the rootView
         return rootView;
     }
@@ -79,6 +76,7 @@ public class BodyPartFragment extends Fragment {
     // in the list is currently being displayed
 
     // COMPLETED (1) Create a setter method and class variable to set and store of a list of image resources
+
     public void setImageIds(List<Integer> imageIds) {
         mImageIds = imageIds;
     }
@@ -88,6 +86,4 @@ public class BodyPartFragment extends Fragment {
     public void setListIndex(int index) {
         mListIndex = index;
     }
-
-
 }

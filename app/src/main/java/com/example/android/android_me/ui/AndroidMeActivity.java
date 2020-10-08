@@ -41,7 +41,6 @@ public class AndroidMeActivity extends AppCompatActivity {
         headFragment.setImageIds(AndroidImageAssets.getHeads());
         headFragment.setListIndex(1);
 
-
         // Add the fragment to its container using a FragmentManager and a Transaction
         FragmentManager fragmentManager = getSupportFragmentManager();
 
@@ -50,7 +49,6 @@ public class AndroidMeActivity extends AppCompatActivity {
                 .commit();
 
         // COMPLETED (5) Create and display the body and leg BodyPartFragments
-
         // Create and display the body and leg BodyPartFragments
 
         BodyPartFragment bodyFragment = new BodyPartFragment();
