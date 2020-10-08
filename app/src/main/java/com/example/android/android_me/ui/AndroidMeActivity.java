@@ -16,8 +16,9 @@
 
 package com.example.android.android_me.ui;
 
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import android.os.Bundle;
 
 import com.example.android.android_me.R;
@@ -35,6 +36,7 @@ public class AndroidMeActivity extends AppCompatActivity {
         // Create a new head BodyPartFragment
         BodyPartFragment headFragment = new BodyPartFragment();
 
+        // COMPLETED (4) Set the list of image id's for the head fragment and set the position to the second image in the list
         // Set the list of image id's for the head fragment and set the position to the second image in the list
         headFragment.setImageIds(AndroidImageAssets.getHeads());
         headFragment.setListIndex(1);
@@ -46,6 +48,7 @@ public class AndroidMeActivity extends AppCompatActivity {
                 .add(R.id.head_container, headFragment)
                 .commit();
 
+        // COMPLETED (5) Create and display the body and leg BodyPartFragments
         // Create and display the body and leg BodyPartFragments
 
         BodyPartFragment bodyFragment = new BodyPartFragment();
@@ -59,7 +62,6 @@ public class AndroidMeActivity extends AppCompatActivity {
         fragmentManager.beginTransaction()
                 .add(R.id.leg_container, legFragment)
                 .commit();
-
 
     }
 }

@@ -17,7 +17,6 @@
 package com.example.android.android_me.ui;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,6 +26,8 @@ import android.widget.ImageView;
 import com.example.android.android_me.R;
 
 import java.util.List;
+import java.util.List;
+import androidx.fragment.app.Fragment;
 
 public class BodyPartFragment extends Fragment {
 
@@ -55,6 +56,9 @@ public class BodyPartFragment extends Fragment {
         // Get a reference to the ImageView in the fragment layout
         ImageView imageView = (ImageView) rootView.findViewById(R.id.body_part_image_view);
 
+        // COMPLETED (3) If a list of image ids exists, set the image resource to the correct item in that list
+        // Otherwise, create a Log statement that indicates that the list was not found
+
         // If a list of image ids exists, set the image resource to the correct item in that list
         // Otherwise, create a Log statement that indicates that the list was not found
         if(mImageIds != null){
@@ -71,12 +75,15 @@ public class BodyPartFragment extends Fragment {
     // Setter methods for keeping track of the list images this fragment can display and which image
     // in the list is currently being displayed
 
+    // COMPLETED (1) Create a setter method and class variable to set and store of a list of image resources
+
     public void setImageIds(List<Integer> imageIds) {
         mImageIds = imageIds;
     }
 
+    // COMPLETED (2) Create another setter method and variable to track and set the index of the list item to display
+    // ex. index = 0 is the first image id in the given list , index 1 is the second, and so on
     public void setListIndex(int index) {
         mListIndex = index;
     }
-
 }
