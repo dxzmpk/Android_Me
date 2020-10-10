@@ -24,7 +24,6 @@ import android.widget.GridView;
 import android.widget.Toast;
 import com.example.android.android_me.R;
 import com.example.android.android_me.data.AndroidImageAssets;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
