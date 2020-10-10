@@ -18,7 +18,6 @@ package com.example.android.android_me.ui;
 
 import android.os.Bundle;
 import android.widget.Toast;
-
 import com.example.android.android_me.R;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -26,12 +25,10 @@ import androidx.appcompat.app.AppCompatActivity;
 // COMPLETED (4) Implement the MasterListFragment callback, OnImageClickListener
 public class MainActivity extends AppCompatActivity  implements  MasterListFragment.OnImageClickListener{
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
     }
 
     // COMPLETED (5) Define the behavior for onImageSelected; create a Toast that displays the position clicked

@@ -44,8 +44,6 @@ public class MasterListFragment extends Fragment {
     }
 
     // COMPLETED (2) Override onAttach to make sure that the container activity has implemented the callback
-
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -83,6 +81,7 @@ public class MasterListFragment extends Fragment {
         gridView.setAdapter(mAdapter);
 
         // COMPLETED (3) Set a click listener on the gridView and trigger the callback onImageSelected when an item is clicked
+        // Set a click listener on the gridView and trigger the callback onImageSelected when an item is clicked
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
