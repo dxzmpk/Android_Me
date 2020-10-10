@@ -11,6 +11,7 @@
  limitations under the License.-->
 
 <!-- GridView that displays AndroidMe images -->
+<!-- COMPLETED (1) Turn this into a LinearLayout and add a "Next" button at the bottom of the gridview -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -40,6 +41,5 @@
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
         android:text="Next" />
-
 
 </LinearLayout>

@@ -16,12 +16,11 @@
 
 package com.example.android.android_me.ui;
 
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
 import com.example.android.android_me.R;
 import com.example.android.android_me.data.AndroidImageAssets;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 // This activity will display a custom Android image composed of three body parts: head, body, and legs
 public class AndroidMeActivity extends AppCompatActivity {
@@ -35,8 +34,8 @@ public class AndroidMeActivity extends AppCompatActivity {
         // Only create new fragments when there is no previously saved state
         if(savedInstanceState == null) {
 
-            // Retrieve list index values that were sent through an intent; use them to display the desired Android-Me body part image
-                // Use setListindex(int index) to set the list index for all BodyPartFragments
+            // COMPLETED (5) Retrieve list index values that were sent through an intent; use them to display the desired Android-Me body part image
+            // Use setListindex(int index) to set the list index for all BodyPartFragments
 
             // Create a new head BodyPartFragment
             BodyPartFragment headFragment = new BodyPartFragment();
