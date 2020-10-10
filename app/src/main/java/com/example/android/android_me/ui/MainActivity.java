@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
         // This ensures that the index will always be a value between 0-11
         int listIndex = position - 12 * bodyPartNumber;
 
+
         // Set the currently displayed item for the correct body part fragment
         switch(bodyPartNumber) {
             case 0: headIndex = listIndex;

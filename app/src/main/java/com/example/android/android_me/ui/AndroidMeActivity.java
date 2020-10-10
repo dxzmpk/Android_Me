@@ -35,8 +35,7 @@ public class AndroidMeActivity extends AppCompatActivity {
         if(savedInstanceState == null) {
 
             // COMPLETED (5) Retrieve list index values that were sent through an intent; use them to display the desired Android-Me body part image
-            // Retrieve list index values that were sent through an intent; use them to display the desired Android-Me body part image
-                // Use setListindex(int index) to set the list index for all BodyPartFragments
+            // Use setListindex(int index) to set the list index for all BodyPartFragments
 
             // Create a new head BodyPartFragment
             BodyPartFragment headFragment = new BodyPartFragment();
