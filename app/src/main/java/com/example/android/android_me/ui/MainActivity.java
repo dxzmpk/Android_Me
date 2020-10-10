@@ -18,15 +18,14 @@ package com.example.android.android_me.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.Toast;
-
 import com.example.android.android_me.R;
 import com.example.android.android_me.data.AndroidImageAssets;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 // This activity is responsible for displaying the master list of all images
 // Implement the MasterListFragment callback, OnImageClickListener
@@ -54,11 +53,11 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
             mTwoPane = true;
 
             // Change the GridView to space out the images more on tablet
-            GridView gridView = (GridView) findViewById(R.id.images_grid_view);
+            GridView gridView = findViewById(R.id.images_grid_view);
             gridView.setNumColumns(2);
 
             // Getting rid of the "Next" button that appears on phones for launching a separate activity
-            Button nextButton = (Button) findViewById(R.id.next_button);
+            Button nextButton = findViewById(R.id.next_button);
             nextButton.setVisibility(View.GONE);
 
             if(savedInstanceState == null) {
@@ -171,7 +170,7 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
             intent.putExtras(b);
 
             // The "Next" button launches a new AndroidMeActivity
-            Button nextButton = (Button) findViewById(R.id.next_button);
+            Button nextButton = findViewById(R.id.next_button);
             nextButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -179,7 +178,5 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
                 }
             });
         }
-
     }
-
 }
