@@ -24,4 +24,6 @@
     android:padding="16dp"
     android:stretchMode="columnWidth"
     android:verticalSpacing="8dp">
+
 </GridView>
+
