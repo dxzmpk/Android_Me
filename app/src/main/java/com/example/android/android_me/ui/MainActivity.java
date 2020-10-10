@@ -17,12 +17,14 @@
 package com.example.android.android_me.ui;
 
 import android.os.Bundle;
+import android.widget.Toast;
+
 import com.example.android.android_me.R;
 import androidx.appcompat.app.AppCompatActivity;
 
 // This activity is responsible for displaying the master list of all images
-// TODO (4) Implement the MasterListFragment callback, OnImageClickListener
-public class MainActivity extends AppCompatActivity {
+// COMPLETED (4) Implement the MasterListFragment callback, OnImageClickListener
+public class MainActivity extends AppCompatActivity  implements  MasterListFragment.OnImageClickListener{
 
 
     @Override
@@ -32,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    // TODO (5) Define the behavior for onImageSelected; create a Toast that displays the position clicked
-
+    // COMPLETED (5) Define the behavior for onImageSelected; create a Toast that displays the position clicked
+    @Override
+    public void onImageSelected(int position) {
+        // Create a Toast that displays the position that was clicked
+        Toast.makeText(this, "Position clicked = " + position, Toast.LENGTH_SHORT).show();
+    }
 }
