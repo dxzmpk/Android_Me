@@ -16,12 +16,12 @@
 
 package com.example.android.android_me.ui;
 
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
 import com.example.android.android_me.R;
 import com.example.android.android_me.data.AndroidImageAssets;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 // This activity will display a custom Android image composed of three body parts: head, body, and legs
 public class AndroidMeActivity extends AppCompatActivity {

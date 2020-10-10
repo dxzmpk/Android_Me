@@ -18,12 +18,11 @@ package com.example.android.android_me.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-
 import com.example.android.android_me.R;
+import androidx.appcompat.app.AppCompatActivity;
 
 // This activity is responsible for displaying the master list of all images
 // Implement the MasterListFragment callback, OnImageClickListener
@@ -91,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
         intent.putExtras(b);
 
         // The "Next" button launches a new AndroidMeActivity
-        Button nextButton = (Button) findViewById(R.id.next_button);
+        Button nextButton = findViewById(R.id.next_button);
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
