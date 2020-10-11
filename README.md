@@ -1,7 +1,49 @@
+![platforms](https://img.shields.io/badge/Platform-Android-blue?style=plastic)  ![platforms](https://img.shields.io/badge/SDK%20Version-29-green?style=plastic&logo=android)  ![platforms](https://img.shields.io/badge/Migrate%20AndroidX-Completed-informational?style=plastic)
+
+
 # Android_Me
 App that lets you style your own Android! This uses Fragments to create a flexible and responsive UI.
 
 This is a exercise repository for the AndroidMe example app which is part of the [Advanced Android App Development course on Udacity](https://www.udacity.com/course/advanced-android-app-development--ud855).
+
+## Contents
+- [Motivation](#Motivation)
+- [Installation](#Installation)
+- [Contributing](#Contributing)
+- [Maintainers](#Maintainers)
+
+## Original Udacity Readme Contents:
+- [How to use this repo while taking the course](#how-to-use-this-repo-while-taking-the-course)
+- [Working with the Course Code](#working-with-the-course-code)
+- [Report Issues](#report-issues)
+
+
+
+## Motivation
+
+Udacity course code is **outdated** and many students (include me) had hard time to complete the course in reasonable time. I spent many hours just update the starter codes which took away my excitement.
+**I decided to update the repository** so the future **students** has slightly easier job to do. 
+I **can't guarantee** that my repo is up to date all the time but I can do my best with your **help**. So feel free to **constribute** if something is outdated. ( Use issues or pull request).
+
+## Installation
+Clone this repository and import into **Android Studio**
+```bash
+git clone git@github.com:LaszloLajosT/Android_Me.git
+```
+
+## Contributing
+
+1. Fork it
+2. Create your feature branch (git checkout -b my-new-feature)
+3. Commit your changes (git commit -m 'Add some feature')
+4. Run the linter (ruby lint.rb').
+5. Push your branch (git push origin my-new-feature)
+6. Create a new Pull Request
+
+## Maintainers
+This project is mantained by:
+* [Laszlo Lajos Toth](https://github.com/LaszloLajosT)
+
 
 ## How to use this repo while taking the course
 
@@ -96,3 +138,4 @@ The **Diff** link will take you to a Github diff as seen below:
 All of the code that was added in the solution is in green, and the removed code (which will usually be the TODO comments) is in red. 
 ## Report Issues
 Notice any issues with a repository? Please file a github issue in the repository.
+
