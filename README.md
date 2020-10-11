@@ -138,4 +138,6 @@ The **Diff** link will take you to a Github diff as seen below:
 All of the code that was added in the solution is in green, and the removed code (which will usually be the TODO comments) is in red. 
 ## Report Issues
 Notice any issues with a repository? Please file a github issue in the repository.
+* [Did you find any bug?](https://github.com/LaszloLajosT/Android_Me/issues/new?assignees=LaszloLajosT&labels=bug&template=bug_report.md&title=)
+* [Do you have a question?](https://github.com/LaszloLajosT/Android_Me/issues/new?assignees=&labels=&template=question.md&title=)
 
