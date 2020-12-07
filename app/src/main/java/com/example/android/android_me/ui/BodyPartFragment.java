@@ -13,7 +13,21 @@ import androidx.fragment.app.Fragment;
 import com.example.android.android_me.R;
 import com.example.android.android_me.data.AndroidImageAssets;
 
+import java.util.List;
+
 public class BodyPartFragment extends Fragment {
+
+    private List<Integer> mImageIds;
+
+    private Integer mListIndex;
+
+    public void setmImageIds(List<Integer> mImageIds) {
+        this.mImageIds = mImageIds;
+    }
+
+    public void setmListIndex(Integer mListIndex) {
+        this.mListIndex = mListIndex;
+    }
 
     public BodyPartFragment() {
         super();
@@ -25,7 +39,8 @@ public class BodyPartFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_body_part, container, false);
         ImageView imageView = rootView.findViewById(R.id.body_image_view);
-        imageView.setImageResource(AndroidImageAssets.getHeads().get(0));
+        imageView.setImageResource(mImageIds.get(mListIndex));
         return imageView;
+
     }
 }
