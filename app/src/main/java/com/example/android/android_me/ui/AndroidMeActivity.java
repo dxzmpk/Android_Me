@@ -20,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -40,29 +41,34 @@ public class AndroidMeActivity extends AppCompatActivity {
     FragmentManager fragmentManager;
     BodyPartFragment bodyFragment;
     BodyPartFragment legFragment;
-
+    private static final String TAG = "AndroidMeActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.e(TAG, "onCreate: MAIN");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_android_me);
 
-        headFragment = new BodyPartFragment();
-        headFragment.setmImageIds(AndroidImageAssets.getHeads());
-        bodyFragment = new BodyPartFragment();
-        bodyFragment.setmImageIds(AndroidImageAssets.getBodies());
-        legFragment = new BodyPartFragment();
-        legFragment.setmImageIds(AndroidImageAssets.getLegs());
+        if (savedInstanceState == null) {
+            headFragment = new BodyPartFragment();
+            headFragment.setmImageIds(AndroidImageAssets.getHeads());
+            bodyFragment = new BodyPartFragment();
+            bodyFragment.setmImageIds(AndroidImageAssets.getBodies());
+            legFragment = new BodyPartFragment();
+            legFragment.setmImageIds(AndroidImageAssets.getLegs());
 
-        headFragment.setmListIndex(0);
-        bodyFragment.setmListIndex(0);
-        legFragment.setmListIndex(0);
+            headFragment.setmListIndex(0);
+            bodyFragment.setmListIndex(0);
+            legFragment.setmListIndex(0);
 
-        fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction()
-                .add(R.id.head_container, headFragment)
-                .add(R.id.body_container, bodyFragment)
-                .add(R.id.leg_container, legFragment)
-                .commit();
+            fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction()
+                    .add(R.id.head_container, headFragment)
+                    .add(R.id.body_container, bodyFragment)
+                    .add(R.id.leg_container, legFragment)
+                    .commit();
+        }
+
+
         // TODO (5) Create a new BodyPartFragment instance and display it using the FragmentManager
     }
 

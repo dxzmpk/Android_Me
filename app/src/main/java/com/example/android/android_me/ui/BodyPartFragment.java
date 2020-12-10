@@ -16,6 +16,7 @@ import androidx.fragment.app.FragmentManager;
 import com.example.android.android_me.R;
 import com.example.android.android_me.data.AndroidImageAssets;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BodyPartFragment extends Fragment {
@@ -62,6 +63,13 @@ public class BodyPartFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
+        Log.e(TAG, "onCreateView: FRAGMENT");
+
+        if (savedInstanceState != null) {
+            mImageIds = savedInstanceState.getIntegerArrayList(IMAGE_ID_LIST);
+            mListIndex = savedInstanceState.getInt(LIST_INDEX);
+        }
+
         View rootView = inflater.inflate(R.layout.fragment_body_part, container, false);
         final ImageView imageView = rootView.findViewById(R.id.body_image_view);
         imageView.setImageResource(mImageIds.get(mListIndex));
@@ -76,14 +84,18 @@ public class BodyPartFragment extends Fragment {
                 }
                 imageView.setImageResource(mImageIds.get(mListIndex));
                 Log.e(TAG, "onClick: ListIndex ADD by 1");
-
-
             }
         });
-
         return imageView;
-
     }
 
+    private final String IMAGE_ID_LIST = "image_id_list";
 
+    private final String LIST_INDEX = "list_index";
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        outState.putIntegerArrayList(IMAGE_ID_LIST, (ArrayList<Integer>) mImageIds);
+        outState.putInt(LIST_INDEX, mListIndex);
+    }
 }
