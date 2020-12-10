@@ -20,6 +20,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
 import com.example.android.android_me.R;
 import com.example.android.android_me.data.AndroidImageAssets;
 
@@ -33,26 +36,28 @@ public class AndroidMeActivity extends AppCompatActivity {
         // In this class, you'll need to implement an empty constructor and the onCreateView method
         // TODO (3) Show the first image in the list of head images
             // Soon, you'll update this image display code to show any image you want
-
-
+    BodyPartFragment headFragment;
+    FragmentManager fragmentManager;
+    BodyPartFragment bodyFragment;
+    BodyPartFragment legFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_android_me);
 
-        BodyPartFragment headFragment = new BodyPartFragment();
+        headFragment = new BodyPartFragment();
         headFragment.setmImageIds(AndroidImageAssets.getHeads());
-        BodyPartFragment bodyFragment = new BodyPartFragment();
+        bodyFragment = new BodyPartFragment();
         bodyFragment.setmImageIds(AndroidImageAssets.getBodies());
-        BodyPartFragment legFragment = new BodyPartFragment();
+        legFragment = new BodyPartFragment();
         legFragment.setmImageIds(AndroidImageAssets.getLegs());
 
         headFragment.setmListIndex(0);
         bodyFragment.setmListIndex(0);
         legFragment.setmListIndex(0);
 
-        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
                 .add(R.id.head_container, headFragment)
                 .add(R.id.body_container, bodyFragment)
@@ -60,4 +65,35 @@ public class AndroidMeActivity extends AppCompatActivity {
                 .commit();
         // TODO (5) Create a new BodyPartFragment instance and display it using the FragmentManager
     }
+
+
+//    public void nextPicHead(View view) {
+//        BodyPartFragment newHeadFragment = new BodyPartFragment();
+//        newHeadFragment.setmImageIds(AndroidImageAssets.getHeads());
+//        newHeadFragment.setmListIndex(headFragment.getmListIndex()+1);
+//        headFragment = newHeadFragment;
+//        fragmentManager.beginTransaction()
+//                .replace(R.id.head_container, newHeadFragment)
+//                .commit();
+//    }
+//
+//    public void nextPicBody(View view) {
+//        BodyPartFragment newHeadFragment = new BodyPartFragment();
+//        newHeadFragment.setmImageIds(AndroidImageAssets.getBodies());
+//        newHeadFragment.setmListIndex(bodyFragment.getmListIndex()+1);
+//        bodyFragment = newHeadFragment;
+//        fragmentManager.beginTransaction()
+//                .replace(R.id.body_container, newHeadFragment)
+//                .commit();
+//    }
+//
+//    public void nextPicLeg(View view) {
+//        BodyPartFragment newHeadFragment = new BodyPartFragment();
+//        newHeadFragment.setmImageIds(AndroidImageAssets.getLegs());
+//        newHeadFragment.setmListIndex(legFragment.getmListIndex()+1);
+//        legFragment = newHeadFragment;
+//        fragmentManager.beginTransaction()
+//                .replace(R.id.leg_container, newHeadFragment)
+//                .commit();
+//    }
 }
