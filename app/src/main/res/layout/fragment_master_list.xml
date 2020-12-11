@@ -6,7 +6,7 @@
     <GridView
         android:id="@+id/master_list_grid"
         android:layout_width="match_parent"
-        android:layout_height="600dp"
+        android:layout_height="match_parent"
 
         android:adjustViewBounds="true"
         android:columnWidth="180dp"
