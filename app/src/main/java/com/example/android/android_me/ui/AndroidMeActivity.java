@@ -19,6 +19,7 @@ package com.example.android.android_me.ui;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -48,6 +49,8 @@ public class AndroidMeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_android_me);
 
+
+
         if (savedInstanceState == null) {
             headFragment = new BodyPartFragment();
             headFragment.setmImageIds(AndroidImageAssets.getHeads());
@@ -56,9 +59,9 @@ public class AndroidMeActivity extends AppCompatActivity {
             legFragment = new BodyPartFragment();
             legFragment.setmImageIds(AndroidImageAssets.getLegs());
 
-            headFragment.setmListIndex(0);
-            bodyFragment.setmListIndex(0);
-            legFragment.setmListIndex(0);
+            headFragment.setmListIndex(getIntent().getIntExtra("headIndex",0));
+            bodyFragment.setmListIndex(getIntent().getIntExtra("bodyIndex",0));
+            legFragment.setmListIndex(getIntent().getIntExtra("legIndex",0));
 
             fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <GridView
         android:id="@+id/master_list_grid"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="600dp"
 
         android:adjustViewBounds="true"
         android:columnWidth="180dp"
@@ -16,4 +16,11 @@
         android:padding="16dp"
         android:stretchMode="columnWidth"
         android:verticalSpacing="8dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/next"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/button_next"/>
 </LinearLayout>
